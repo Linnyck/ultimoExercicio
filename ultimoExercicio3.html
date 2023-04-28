@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Criar Nova Oportunidade">
+        <div class="slds-p-around_medium">
+            <template if:true={showMessage}>
+                <div class="slds-notify slds-notify_alert slds-theme_error" role="alert">
+                    <span class="slds-assistive-text">Error</span>
+                    {errorMessage}
+                </div>
+            </template>
+            <lightning-input label="Nome da Oportunidade" value={oppName} required></lightning-input>
+            <lightning-input type="currency" label="Amount" value={oppAmount} required></lightning-input>
+            <lightning-input label="Estágio" value={oppStage} required></lightning-input>
+            <lightning-button variant="brand" label="Salvar" onclick={handleSave}></lightning-button>
+        </div>
+    </lightning-card>
+</template>
