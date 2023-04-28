@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="Oportunidades em Negociação/Revisão">
+        <template if:true={oportunidades}>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                <thead>
+                    <tr class="slds-line-height_reset">
+                        <th class="slds-text-align_left" scope="col">
+                            <div class="slds-truncate" title="ID">ID</div>
+                        </th>
+                        <th class="slds-text-align_left" scope="col">
+                            <div class="slds-truncate" title="Nome">Nome</div>
+                        </th>
+                        <th class="slds-text-align_left" scope="col">
+                            <div class="slds-truncate" title="Amount">Amount</div>
+                        </th>
+                        <th class="slds-text-align_left" scope="col">
+                            <div class="slds-truncate" title="Data de Criação">Data de Criação</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={oportunidades} for:item="opp">
+                        <tr key={opp.Id}>
+                            <td>
+                                <div class="slds-truncate" title={opp.Id}>{opp.Id}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title={opp.Name}>{opp.Name}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title={opp.Amount}>{opp.Amount}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title={opp.CreatedDate}>{opp.CreatedDate}</div>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <div class="slds-align_absolute-center slds-m-top_small">
+                <lightning-button variant="brand" label="Ver todas as oportunidades" title="Ver todas as oportunidades"></lightning-button>
+            </div>
+        </template>
+        <template if:false={oportunidades}>
+            <div class="slds-align_absolute-center slds-m-top_small">
+                <lightning-spinner alternative-text="Carregando" size="medium"></lightning-spinner>
+            </div>
+        </template>
+    </lightning-card>
+</template>
