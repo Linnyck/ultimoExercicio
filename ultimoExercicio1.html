@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Calculadora">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col">
+                <input type="text" class="input-numbers" value={inputValue} disabled></input>
+                <div class="slds-grid slds-gutters">
+                    <lightning-button label="1" onclick={handleNumberClick} value="1"></lightning-button>
+                    <lightning-button label="2" onclick={handleNumberClick} value="2"></lightning-button>
+                    <lightning-button label="3" onclick={handleNumberClick} value="3"></lightning-button>
+                    <lightning-button label="+" onclick={handleOperatorClick} value="+"></lightning-button>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <lightning-button label="4" onclick={handleNumberClick} value="4"></lightning-button>
+                    <lightning-button label="5" onclick={handleNumberClick} value="5"></lightning-button>
+                    <lightning-button label="6" onclick={handleNumberClick} value="6"></lightning-button>
+                    <lightning-button label="-" onclick={handleOperatorClick} value="-"></lightning-button>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <lightning-button label="7" onclick={handleNumberClick} value="7"></lightning-button>
+                    <lightning-button label="8" onclick={handleNumberClick} value="8"></lightning-button>
+                    <lightning-button label="9" onclick={handleNumberClick} value="9"></lightning-button>
+                    <lightning-button label="*" onclick={handleOperatorClick} value="*"></lightning-button>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <lightning-button label="Clear" onclick={handleClearClick}></lightning-button>
+                    <lightning-button label="0" onclick={handleNumberClick} value="0"></lightning-button>
+                    <lightning-button label="/" onclick={handleOperatorClick} value="/"></lightning-button>
+                    <lightning-button label="=" onclick={handleEqualsClick}></lightning-button>
+                </div>
+                <p class="error-message">{errorMessage}</p>
+            </div>
+        </div>
+    </lightning-card>
+</template>
